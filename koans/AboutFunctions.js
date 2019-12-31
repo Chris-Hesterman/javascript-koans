@@ -22,9 +22,9 @@ describe("About Functions", function() {
       return message;
     }
 
-    expect(getMessage()).toBe('Outer');
-    expect(overrideMessage()).toBe('Inner');
-    expect(message).toBe('Outer');
+    expect(getMessage()).toBe("Outer");
+    expect(overrideMessage()).toBe("Inner");
+    expect(message).toBe("Outer");
   });
 
   it("should have lexical scoping", function() {
@@ -38,7 +38,7 @@ describe("About Functions", function() {
       }
       return childfunction();
     }
-    expect(parentfunction()).toBe('local');
+    expect(parentfunction()).toBe("local");
   });
 
   it("should use lexical scoping to synthesise functions", function() {
@@ -61,7 +61,7 @@ describe("About Functions", function() {
       return firstArg;
     }
 
-    expect(returnFirstArg("first", "second", "third")).toBe('first');
+    expect(returnFirstArg("first", "second", "third")).toBe("first");
 
     function returnSecondArg(firstArg, secondArg) {
       return secondArg;
@@ -91,10 +91,10 @@ describe("About Functions", function() {
     };
 
     var praiseSinger = { givePraise: appendRules };
-    expect(praiseSinger.givePraise("John")).toBe('John rules!');
+    expect(praiseSinger.givePraise("John")).toBe("John rules!");
 
     praiseSinger.givePraise = appendDoubleRules;
-    expect(praiseSinger.givePraise("Mary")).toBe('Mary totally rules!');
+    expect(praiseSinger.givePraise("Mary")).toBe("Mary totally rules!");
 
   });
 
@@ -106,9 +106,9 @@ describe("About Functions", function() {
       // An internal comment
       return a * b;
     };
-    expect(multiply.toString()).toBe('function(a, b) {
+    expect(multiply.toString()).toBe("function(a, b) {
       //An internal comment
       return a * b;
-     }');
+     }");
   });
 });
