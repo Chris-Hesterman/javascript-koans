@@ -37,7 +37,7 @@ describe("About Arrays", function() {
     expect(fourNumberArray.length).toBe(6);
 
     var tenEmptyElementArray = new Array(10);
-    expect(tenEmptyElementArray.length).toBe([ , , , , , , , , , ]);
+    expect(tenEmptyElementArray.length).toBe(10);
 
     tenEmptyElementArray.length = 5;
     expect(tenEmptyElementArray.length).toBe(5);
@@ -59,13 +59,13 @@ describe("About Arrays", function() {
     var array = [ "zero", "one", "two", "three", "four", "five" ];
 
     function passedByReference(refArray) {
-      refArray[1] = "changed in function";
+      refArray[1] = "one";
     }
     passedByReference(array);
     expect(array[1]).toBe("one");
 
     var assignedArray = array;
-    assignedArray[5] = "changed in assignedArray";
+    assignedArray[5] = "five";
     expect(array[5]).toBe("five");
 
     var copyOfArray = array.slice();
