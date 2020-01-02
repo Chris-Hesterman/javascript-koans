@@ -77,7 +77,7 @@ describe("About Applying What We Have Learnt", function() {
       return (num % 3 === 0 || num % 5 === 0) ? memo + num: memo;
       }, 0);
 
-    /* try chaining range() and reduce() */
+    //try chaining range() and reduce()
 
     // I came back to this after trying to better understand the use of _.chain.  Gave it
     // another shot really trying to understand it fully.  I did find the trick of starting
@@ -129,26 +129,26 @@ describe("About Applying What We Have Learnt", function() {
 
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
-  /*
-  it("should find the largest prime factor of a composite number", function () {
 
-  });
+//   it("should find the largest prime factor of a composite number", function () {
 
-  it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
+//   });
 
-  });
+//   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
 
-  it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
+//   });
+
+//   it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
 
 
-  });
+//   });
 
-  it("should find the difference between the sum of the squares and the square of the sums", function () {
+//   it("should find the difference between the sum of the squares and the square of the sums", function () {
 
-  });
+//   });
 
-  it("should find the 10001st prime", function () {
+//   it("should find the 10001st prime", function () {
 
-  });
-  */
+//   });
+
 });
