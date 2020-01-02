@@ -72,11 +72,28 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
+    //*** my original unorthodox solution */
     var sum = _.reduce(_.range(1, 1000), function(memo, num) {
       return (num % 3 === 0 || num % 5 === 0) ? memo + num: memo;
       }, 0);
-     /* try chaining range() and reduce() */
-     console.log(sum);
+
+    /* try chaining range() and reduce() */
+
+    // I came back to this after trying to better understand the use of _.chain.  Gave it
+    // another shot really trying to understand it fully.  I did find the trick of starting
+    // the chain with a single digit then using range to expand it.  I like that this avoids
+    // a whole other variable.
+
+    // var sum = _.chain(1)
+    //   .range(1000)
+    //   .filter(function(num) {
+    //     return num % 3 === 0 || num % 5 === 0;
+    //   })
+    //   .reduce(function(memo, num) {
+    //     return memo + num;
+    //   }, 0)
+    //   .value();
+
     expect(233168).toBe(sum);
   });
 
@@ -94,11 +111,20 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should count the ingredient occurrence (functional)", function () {
-    var ingredientCount = { "{ingredient name}": 0 };
-
     /* chain() together map(), flatten() and reduce() */
+    var ingredientCount = { "{ingredient name}": 0 };
+    let ingredientsArr = _.chain(products)
+      .map(function(product) {
+        return product.ingredients;
+      })
+      .flatten()
+      .reduce(function(ingredientCount, ingredient) {
+        ingredientCount[ingredient] = (ingredientCount[ingredient] || 0) + 1;
+        return ingredientCount;
+      }, ingredientCount)
+      .value();
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   /*********************************************************************************/
