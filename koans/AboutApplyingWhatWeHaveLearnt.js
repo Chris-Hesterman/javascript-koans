@@ -73,9 +73,9 @@ describe("About Applying What We Have Learnt", function() {
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
     //*** my original unorthodox solution */
-    var sum = _.reduce(_.range(1, 1000), function(memo, num) {
-      return (num % 3 === 0 || num % 5 === 0) ? memo + num: memo;
-      }, 0);
+    // var sum = _.reduce(_.range(1, 1000), function(memo, num) {
+    //   return (num % 3 === 0 || num % 5 === 0) ? memo + num: memo;
+    //   }, 0);
 
     //try chaining range() and reduce()
 
@@ -84,15 +84,15 @@ describe("About Applying What We Have Learnt", function() {
     // the chain with a single digit then using range to expand it.  I like that this avoids
     // a whole other variable.
 
-    // var sum = _.chain(1)
-    //   .range(1000)
-    //   .filter(function(num) {
-    //     return num % 3 === 0 || num % 5 === 0;
-    //   })
-    //   .reduce(function(memo, num) {
-    //     return memo + num;
-    //   }, 0)
-    //   .value();
+    var sum = _.chain(1)
+      .range(1000)
+      .filter(function(num) {
+        return num % 3 === 0 || num % 5 === 0;
+      })
+      .reduce(function(memo, num) {
+        return memo + num;
+      }, 0)
+      .value();
 
     expect(233168).toBe(sum);
   });
